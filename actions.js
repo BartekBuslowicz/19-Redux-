@@ -27,7 +27,7 @@ function removeComment(id) {
 	    id
 	}
 }
-const boundRemoveComment = id => dispatch(id));
+const boundRemoveComment = id => dispatch(removeComment(id));
 boundRemoveComment(1);
 
 function editComment(id, text) {
@@ -37,7 +37,7 @@ function editComment(id, text) {
 	    text
 	}
 }
-const boundEditComment = (id, text) => dispatch(id, text));
+let boundEditComment = (id, text) => dispatch(editComment(id, text));
 boundEditComment(1, 'nowy komentarz!');
 
 
@@ -48,7 +48,7 @@ function thumbUpComment(id, counter) {
 		counter: counter + 1
 	}
 }
-const boundThumbUpComment = id =>(id));
+let boundThumbUpComment = id => dispatch(thumbUpComment(id));
 boundThumbUpComment(1);
 
 
@@ -59,5 +59,5 @@ function thumbDownComment(id, counter) {
 		counter: counter - 1
 	}
 }
-const boundThumbUpComment = id =>(id));
+let boundThumbUpComment = id => dispatch(thumbDownComment(id));
 boundThumbUpComment(1);
